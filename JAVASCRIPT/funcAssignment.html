@@ -30,7 +30,21 @@
         // Qs2. Write a JavaScript function to extract unique characters from a string.
 // Example: str = “abcdabcdefgggh”
 // ans = “abcdefgh”
+        let str = "abcdabcdefgggh"
+        let ans = "";
+        function getUniq(str){
+            for(let i =0; i < str.length; i++){
+              let currChar = str[i];
+                if(ans.indexOf(currChar) == -1){
+                    ans += currChar;
+                console.log("_-_-_________" , ans);
 
+                }
+            }
+            console.log(`_____________So Final str is: " ${ans} "`);
+            return ans;
+        }
+        getUniq(str)
     </script>
 </body>
 </html>
