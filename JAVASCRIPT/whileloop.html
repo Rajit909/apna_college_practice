@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game</title>
+  </head>
+  <body>
+    <section class="main">
+      <h1>Lets Try </h1>
+    </section>
+
+    <a class="Btn" href="#" st></a>
+
+    <script>
+      let heading = document.querySelector(".main")
+      let btn = document.querySelector(".Btn")
+      const favMovie = "Avtar";
+      let guess = prompt("Enter your choice");
+      while (guess != favMovie) {
+        if (guess == "quit") {
+          heading.innerHTML = "Quit"
+        break;
+        }
+        guess = prompt("Wrong guess! Try again.");
+      }
+      if (guess === favMovie) {
+        heading.innerHTML = "Welcome to the real world of gaming."
+        btn.innerText = "Replay"
+      } 
+
+
+
+    </script>
+  </body>
+</html>

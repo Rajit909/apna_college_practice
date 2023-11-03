@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function</title>
+  </head>
+  <body>
+
+    <a href="http://192.168.56.1:5500/JAVASCRIPT/functions.html">Refresh</a>
+    <script>
+      // USe of return
+      // function sum(a, b){
+      //     console.log("hiiiiiiiiiiiiiiii");
+      //     return a+b;
+      // }
+      // let s = sum(1, 5)
+      // console.log(s);
+
+      // function printTable(n){
+
+      //     for(let i = n; i<=n*10; i+=n){
+      //         console.log(i);
+      //     }
+      // }
+      // printTable(5)
+
+      // function isAdult(age){
+      //     if(age >= 18 ){
+      //         return " Adult"
+      //     }
+      //     else{
+      //         return "Not Adult!!!!"
+      //     }
+      // }
+      // let Final = isAdult(19)
+      // console.log(Final);
+
+    //   Sum of a number---------------------------------------------
+
+    //   function SumOfNum(n) {
+    //     let sum = 0;
+    //     for (let i = 1; i <= n; i++) {
+    //       sum = sum + i;
+    //     }
+    //     return sum;
+    //   }
+    //   let getSum = SumOfNum(
+    //     prompt("Enter the number which you want to add.")
+    //   );
+    //   console.log(getSum);
+
+    // --------------------------------------------------------------
+//  String concatenation
+    // let str = [
+    //     "hii", "hello", "bye", "look"
+    // ]
+    // function concateStr(str){
+    //     let result;
+    //     for(let i = 0; i < str.length; i++){
+    //         result += str[i];
+    //     }
+    //     return result;
+    // }
+    // console.log(concateStr(str));
+
+    //  Let & const have its own block scope while var never have any block scope
+    // {
+    //     let a= 23;
+    //     const b = 20;
+    // }
+    // console.log(a);
+
+    //  var never have any block scope while var have global scope
+    // {
+    //     var a= 23
+    // }
+    // console.log(a);
+
+// Laxical scope
+
+      // function outerFunc(){
+      //   let x = 3;
+      //   let y = 5;
+      //   function innerFunc(){
+      //     let a =8;
+      //     console.log(x);
+      //     console.log(y);
+      //   }
+      //   // console.log(a);
+      //   innerFunc();
+      // }
+
+// Function scope
+      
+      // const sum = function(a, b){
+      //     return a+b;
+      // }
+      // console.log(sum(2,5));
+
+      
+//Scopes
+      // let greet = "hello"//global scope
+
+      // function changeGreet(){//functional scope
+      //   let greet = "namaste"
+      //   console.log(greet)
+      //   function innerGreet(){//lexical scope
+      //     console.log(greet);
+      //   }
+      //   innerGreet();
+      // }
+
+      // console.log();
+      // changeGreet()
+
+//High order function
+/***
+ * A function that does one or path :
+ *      >takes pne or multiple function as arguments 
+ *      >returns a function 
+ * ****/
+
+        function multipleGreet(func, count){
+            for(let i = 0; i<count; i++){
+              func();
+            }
+        }
+
+        let greet = function(){
+          console.log("hiiiiiiiiiii");
+        }
+
+        multipleGreet(greet, 10)
+  
+    </script>
+  </body>
+</html>

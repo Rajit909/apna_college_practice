@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object</title>
+  </head>
+  <body style="background-color: black">
+    <script>
+      //twitter post
+      // const post = {
+      //     username: "Rajit",
+      //     content: "This is my first post",
+      //     likes: 120,
+      //     repost: 5,
+      //     tags: [
+      //         "apna college", "LCO"
+      //     ]
+      // }
+
+      // const obj = {
+      //     1: "a",
+      //     2: "b",
+      //     null: "c",
+      //     true: "d",
+      //     undefined: "e"
+      // }
+
+      // const student = {
+      //     name:"rajit",
+      //     age: "23",
+      //     marks: 80,
+      //     city: "BLY"
+      // }
+
+      // const classInfo = {
+      //     aman:{
+      //         gender: "male",
+      //         age: 23
+      //     },
+      //     raj:{
+      //         gender: "male",
+      //         age: 23
+      //     },
+      //     rajit:{
+      //         gender: "male",
+      //         age: 24
+      //     }
+      // }
+      // const classInfo = [
+      //   {
+      //     name: "aman",
+      //     gender: "male",
+      //     age: 23,
+      //   },
+      //   {
+      //     name: "raj",
+      //     gender: "male",
+      //     age: 26,
+      //   },
+      //   {
+      //     name: "aleena",
+      //     gender: "female",
+      //     age: 20,
+      //   },
+      // ];
+
+      let max = prompt("Enter Max number");
+
+      let random_num = Math.floor(Math.random() * max) + 1;
+      let guess = prompt("Guess the number");
+      console.log(random_num);
+      console.log(guess);
+      while (true) {
+        if (guess == "quit") {
+          console.log("user quit");
+          break;
+        }
+        if (guess == random_num) {
+          console.log("You win! Congragt!!. Random Number was ", random_num);
+          break;
+        } else if(guess < random_num){
+          guess = prompt("Hint: your guess was too small . guess the number again ");
+        }else{
+          guess = prompt("Hint: your guess was too large . guess the number again ");
+        }
+      }
+    </script>
+  </body>
+</html>
