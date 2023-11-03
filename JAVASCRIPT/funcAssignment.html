@@ -30,21 +30,49 @@
         // Qs2. Write a JavaScript function to extract unique characters from a string.
 // Example: str = “abcdabcdefgggh”
 // ans = “abcdefgh”
-        let str = "abcdabcdefgggh"
-        let ans = "";
-        function getUniq(str){
-            for(let i =0; i < str.length; i++){
-              let currChar = str[i];
-                if(ans.indexOf(currChar) == -1){
-                    ans += currChar;
-                console.log("_-_-_________" , ans);
+        // let str = "abcdabcdefgggh"
+        // let ans = "";
+        // function getUniq(str){
+        //     for(let i =0; i < str.length; i++){
+        //       let currChar = str[i];
+        //         if(ans.indexOf(currChar) == -1){
+        //             ans += currChar;
+        //         console.log("_-_-_________" , ans);
 
-                }
+        //         }
+        //     }
+        //     console.log(`_____________So Final str is: " ${ans} "`);
+        //     return ans;
+        // }
+        // getUniq(str)
+
+
+//         Qs3. Write a JavaScript function that accepts a list of country names as input and
+// returns the longest country name as output.
+// Example : country = ["Australia", "Germany", "United States of America"]
+// output : "United States of America"
+
+    let country = ["Australia", "Germany", "United States of America"]
+    
+    function longestCountry(country){
+        let ansIdx = 0;
+        for (let i = 0; i < country.length; i++) {
+            // console.log(country);
+            let ansLen = country[ansIdx].length;
+            console.log(ansLen);
+            let currLen = country[i].length
+            console.log(currLen);
+            if (currLen > ansIdx) {
+                ansIdx = i;
             }
-            console.log(`_____________So Final str is: " ${ans} "`);
-            return ans;
         }
-        getUniq(str)
+        return country[ansIdx]
+    }
+
+    longestCountry(country)
+
+
+
     </script>
 </body>
 </html>
