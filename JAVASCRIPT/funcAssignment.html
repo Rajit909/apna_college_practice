@@ -47,31 +47,70 @@
         // getUniq(str)
 
 
-//         Qs3. Write a JavaScript function that accepts a list of country names as input and
-// returns the longest country name as output.
-// Example : country = ["Australia", "Germany", "United States of America"]
-// output : "United States of America"
+    //         Qs3. Write a JavaScript function that accepts a list of country names as input and
+    // returns the longest country name as output.
+    // Example : country = ["Australia", "Germany", "United States of America"]
+    // output : "United States of America"
 
-    let country = ["Australia", "Germany", "United States of America"]
-    
-    function longestCountry(country){
-        let ansIdx = 0;
-        for (let i = 0; i < country.length; i++) {
-            // console.log(country);
-            let ansLen = country[ansIdx].length;
-            console.log(ansLen);
-            let currLen = country[i].length
-            console.log(currLen);
-            if (currLen > ansIdx) {
-                ansIdx = i;
-            }
-        }
-        return country[ansIdx]
-    }
+    //     let country = ["Australia", "Germany", "United States of America"]
+            
+    //     function longestCountry(country){
+    //         let ansIdx = 0;
+    //         for (let i = 0; i < country.length; i++) {
+    //             console.log(" ");
+    //             console.log(country[i])
+    //             let currLen = country[i].length
+    //             console.log("Countries lenth are: ",currLen);
 
-    longestCountry(country)
+    //             if (currLen > ansIdx) {
+    //                 ansIdx = i;
+    //             }
+    //         }
+    //         return country[ansIdx]
+    //     }
+
+    // let longestName = longestCountry(country)
+    // console.log("Name of the longest country is: ",longestName);
 
 
+
+    // Qs4. Write a JavaScript function to count the number of vowels in a String argument
+
+        // let str = "apnacollege"
+        // console.log(str)
+        // function countVowels(str){
+        //     let count = 0;
+        //     for(let i = 0; i < str.length; i++){
+        //         // console.log(str.charAt(i))
+        //         if(
+        //             str.charAt(i) == "a" ||
+        //             str.charAt(i) == "e" ||
+        //             str.charAt(i) == "i" ||
+        //             str.charAt(i) == "o" ||
+        //             str.charAt(i) == "u" 
+        //     ){
+        //         count ++;
+        //     }
+        //     }
+        //     return count;
+        // }
+
+        // let vowels = countVowels(str)
+        // console.log(vowels)
+
+// Qs5. Write a JavaScript function to generate a random number within a range (start,
+// end).
+
+        // let start = 100;
+        // let end = 200;
+
+        // function randomNum(start, end){
+        //     let diff = end - start;
+        //     return Math.floor(Math.random() * diff) + start;
+        // }
+
+        // let rand =  randomNum(10, 90)
+        // console.log(rand)
 
     </script>
 </body>
