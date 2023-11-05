@@ -117,22 +117,124 @@
 //High order function
 /***
  * A function that does one or path :
- *      >takes pne or multiple function as arguments 
+ *      >takes one or multiple function as arguments 
  *      >returns a function 
  * ****/
 
-        function multipleGreet(func, count){
-            for(let i = 0; i<count; i++){
-              func();
+        // function multipleGreet(func, count){
+        //     for(let i = 0; i<count; i++){
+        //       func();
+        //     }
+        // }
+
+        // let greet = function(){
+        //   console.log("hiiiiiiiiiii");
+        // }
+
+        // multipleGreet(greet, 10)
+
+
+        // this in js: "this" keyword refers to an object that is executing the current piece of code.
+
+        // const student = {
+        //   name: "rajit",
+        //   age: 23,
+        //   eng: 56,
+        //   math: 86,
+        //   phy: 61,
+        //   getAvg(){
+        //     let avg = (this.eng + this.math + this.phy) / 3;
+        //     let finalAvg = Math.floor(avg)
+        //     console.log(finalAvg)
+        //   }
+        // };
+        // student.getAvg()
+
+
+        // function getAvg(){
+        //   console.log(this)
+        // } 
+        // getAvg()
+
+        // try & catch: 
+        // Try:---The try statement allows you to define a block of code to be tested for errors while it is being executed.
+        // Catch:---the catch statement allows you to define a block of code to be executed, if an error occurs in the try block
+
+
+        // console.log("jnnefl")
+        // let a = "Rajit";
+
+        // try {
+        //   console.log(b)
+        // } catch (error) {
+        //   console.log(error)
+        // }
+
+        // console.log("jnnefl")
+        // console.log("jnnefl")
+
+
+        // Arrow function
+
+        // let sum = (a, b)=>{
+        //   console.log(a + b)
+        // }
+        // sum(45,56)
+
+        // let mul = (a, b)=> (console.log(a * b))
+        // mul(5, 6)
+
+
+ // setTimeout: 
+        // setTimeout(()=>{
+        //   console.log("to coding")
+        // }, 2000)
+        // console.log("Welcome")
+
+
+//  setInterval:
+        // let id = setInterval(() => {
+        //   console.log("Hello")
+        // }, 2000);
+
+        // setTimeout(() => {
+        //   clearInterval(id)
+        // }, 8000);
+
+
+
+
+// this in Arrow function:
+
+      
+  const student = {
+            name: "rajit",
+            age: 23,
+            eng: 56,
+            math: 86,
+            phy: 61,
+            prop: this, //global scope
+            getName(){
+              return this.name
+            },
+
+            getMarks: ()=>{
+              console.log(this)//parents scope
+              let marks = this.eng + this.math + this.phy; 
+              return this.marks;
             }
-        }
+  }
 
-        let greet = function(){
-          console.log("hiiiiiiiiiii");
-        }
+  console.log(student.getName())
+  console.log(student.getMarks())
 
-        multipleGreet(greet, 10)
-  
+
+
+
+
+        
+
+        
     </script>
   </body>
 </html>
