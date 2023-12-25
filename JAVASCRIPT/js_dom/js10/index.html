@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo-App</title>
     <style>
-        body{
+        body {
             background-color: rgb(143, 214, 57);
         }
-        .One{
+        .One {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap:10px;
+            gap: 10px;
         }
-        ul>li>button{
+        ul>li>button {
             background-color: red;
             border-radius: 50%;
             color: yellow;
@@ -23,7 +23,7 @@
         }
     </style>
 </head>
-<body >
+<body>
     <div class="One">
         <h1>Toto List App</h1>
         <div>
@@ -31,7 +31,11 @@
             <button>Add task</button>
 
             <ul>
-                <li>Do code <button class="delete">X</button></li>
+                <li>
+                    Do code 
+                    <button class="delete">X</button>
+                    <button class="edit">Edit</button>
+                </li>
             </ul>
         </div>
     </div>
@@ -42,35 +46,45 @@
         let btn = document.querySelector("button")
         let list = document.querySelector("ul")
 
-        btn.addEventListener("click", (e)=>{
-            console.log(inp.value);
+        btn.addEventListener("click", (e) => {
             // Creating task
             let task = document.createElement("li");
             task.innerText = inp.value;
             list.appendChild(task)
-            console.log(task);
             inp.value = ""
 
             let Delbtn = document.createElement("button")
             Delbtn.classList.add("delete")
             Delbtn.innerText = "X"
             task.appendChild(Delbtn)
-            console.log(list);
+
+            let EditBtn = document.createElement("button");
+            EditBtn.classList.add("edit");
+            EditBtn.innerText = "Edit";
+            task.appendChild(EditBtn)
+
+            // Add event listener for the Edit button in the new task
+            EditBtn.addEventListener("click", () => {
+                editTask(task);
+            });
         })
 
-        let delBtns = document.querySelectorAll(".delete");
-
-        list.addEventListener("click", (event)=>{
-            console.log(event.target);
-            event.stopPropagation;
-
-            console.log("brtvgh");
+        list.addEventListener("click", (event) => {
+            // Deleting a task
+            if (event.target.className === "delete") {
+                let listItem = event.target.parentElement;
+                listItem.remove();
+            }
         })
 
-
-        
-
-
+        // Function to enable editing for a task
+        function editTask(task) {
+            const taskText = task.firstChild;
+            const newText = prompt("Edit task:", taskText.textContent);
+            if (newText !== null) {
+                taskText.textContent = newText;
+            }
+        }
     </script>
 </body>
 </html>
