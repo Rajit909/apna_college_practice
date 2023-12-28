@@ -31,11 +31,8 @@
             <button>Add task</button>
 
             <ul>
-                <li>
-                    Do code 
-                    <button class="delete">X</button>
-                    <button class="edit">Edit</button>
-                </li>
+                <h2>Task will be here..</h2>
+                <!-- task dainamically appear here -->
             </ul>
         </div>
     </div>
@@ -47,6 +44,8 @@
         let list = document.querySelector("ul")
 
         btn.addEventListener("click", (e) => {
+            let h2 = document.querySelector("h2")
+            h2.innerText = ""
             // Creating task
             let task = document.createElement("li");
             task.innerText = inp.value;
@@ -79,6 +78,7 @@
 
         // Function to enable editing for a task
         function editTask(task) {
+            console.log(task);
             const taskText = task.firstChild;
             const newText = prompt("Edit task:", taskText.textContent);
             if (newText !== null) {
