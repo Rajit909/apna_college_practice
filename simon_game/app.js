@@ -47,12 +47,19 @@ function levelUp(){
     
 }
 
+function checkAns(){
+    console.log(level);
+}
+
 function btnPress(){
     // console.log(this);
     let btn = this;
     userFlash(btn)
     userColor = btn.getAttribute("id");
     console.log(userColor);
+    userSeq.push(userColor)
+    checkAns();
+    console.log(userSeq);
 };
 
 let allBtns = document.querySelectorAll(".btn");
