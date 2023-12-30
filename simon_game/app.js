@@ -48,14 +48,14 @@ function levelUp(){
 }
 
 function checkAns(){
-    // let idx = level - 1;
-    // console.log(idx);
+    let idx = level - 1;
+    console.log(idx);
 
-    // if (userSeq[idx] === gameSeq[idx]) {
-    //     console.log("game over");
-    // }else{
-    //     h2.innerText = 'Game over'
-    // }
+    if (userSeq[idx] === gameSeq[idx]) {
+        console.log("same value");
+    }else{
+        h2.innerText = 'Game over'
+    }
     
 }
 
@@ -67,7 +67,7 @@ function btnPress(){
     console.log(userColor);
     userSeq.push(userColor)
     checkAns();
-    // console.log(userSeq);
+    console.log(userSeq);
 };
 
 let allBtns = document.querySelectorAll(".btn");
