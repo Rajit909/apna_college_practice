@@ -48,7 +48,15 @@ function levelUp(){
 }
 
 function checkAns(){
-    console.log(level);
+    // let idx = level - 1;
+    // console.log(idx);
+
+    // if (userSeq[idx] === gameSeq[idx]) {
+    //     console.log("game over");
+    // }else{
+    //     h2.innerText = 'Game over'
+    // }
+    
 }
 
 function btnPress(){
@@ -59,7 +67,7 @@ function btnPress(){
     console.log(userColor);
     userSeq.push(userColor)
     checkAns();
-    console.log(userSeq);
+    // console.log(userSeq);
 };
 
 let allBtns = document.querySelectorAll(".btn");
