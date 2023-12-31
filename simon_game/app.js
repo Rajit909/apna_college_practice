@@ -68,6 +68,7 @@ function checkAns(idx){
     }
 };
 
+
 function btnPress(){
     // console.log(this);
     let btn = this;
