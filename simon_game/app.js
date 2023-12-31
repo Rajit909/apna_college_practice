@@ -1,9 +1,8 @@
-
-let h2 = document.querySelector("h2")
+let h2 = document.querySelector("h2");
 
 let gameSeq = [];
 let userSeq = [];
-let btns = ["red", "yellow", "green", "purple"]
+let btns = ["red", "yellow", "green", "purple"];
 
 
 let started = false;
@@ -24,54 +23,53 @@ document.addEventListener("keypress", function(){
         btn.classList.remove("flash");
     }, 150);
  }
+
  function userFlash(btn){
 
     btn.classList.add("userFlash");
     setTimeout(()=>{
         btn.classList.remove("userFlash");
     }, 150);
- }
+ };
 
 
 function levelUp(){
+    userSeq = [];
     level++;
-    h2.innerText = `Level ${level}`
+    h2.innerText = `Level ${level}`;
     let randIdx = Math.floor(Math.random() * 4);
     let randColor = btns[randIdx];
-    let randBtn = document.querySelector(`.${randColor}`)
+    let randBtn = document.querySelector(`.${randColor}`);
     
-    gameSeq.push(randColor)
-    console.log(gameSeq);
+    gameSeq.push(randColor);
+    console.log("gameSeq",gameSeq);
     // random btn flash
     gameFlash(randBtn);
     
 }
 
-function checkAns(){
-    let idx = level - 1;
-    console.log(idx);
-
+function checkAns(idx){
     if (userSeq[idx] === gameSeq[idx]) {
-        console.log("same value");
+        if (userSeq.length == gameSeq.length) {
+            setTimeout(levelUp,1000)
+        }
     }else{
-        h2.innerText = 'Game over'
+        h2.innerText = 'Game over';
     }
-    
-}
+};
 
 function btnPress(){
     // console.log(this);
     let btn = this;
-    userFlash(btn)
+    userFlash(btn);
     userColor = btn.getAttribute("id");
     console.log(userColor);
-    userSeq.push(userColor)
-    checkAns();
-    console.log(userSeq);
+    userSeq.push(userColor);
+    checkAns(userSeq.length-1);
+    console.log("Useseq",userSeq);
 };
 
 let allBtns = document.querySelectorAll(".btn");
 for (btn of allBtns) {
     btn.addEventListener("click", btnPress)
-}
-
+};
