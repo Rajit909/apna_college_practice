@@ -54,7 +54,8 @@ function checkAns(idx){
             setTimeout(levelUp,1000)
         }
     }else{
-        h2.innerText = 'Game over';
+        h2.innerHTML = `<marquee behavior="alternate" direction="left" width="350px"> Game over! Your score was <b>${level}</b>.</marquee> </br><marquee behavior="alternate" direction="right" width="260px"> Press any key to start.</marquee>`;
+        reset();
     }
 };
 
@@ -73,3 +74,10 @@ let allBtns = document.querySelectorAll(".btn");
 for (btn of allBtns) {
     btn.addEventListener("click", btnPress)
 };
+
+let reset = ()=> {
+    started = false;
+    gameSeq = [];
+    userSeq = [];
+    level = 0;
+}
