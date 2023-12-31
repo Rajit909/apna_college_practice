@@ -3,7 +3,7 @@ body{
     text-align: center;
 }
 .main-container{
-    background-color: rgb(207, 188, 225);
+    background-color: #cfbce1;
 }
 .btn-container{
     display: flex;

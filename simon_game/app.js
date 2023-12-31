@@ -36,7 +36,7 @@ document.addEventListener("keypress", function(){
 function levelUp(){
     userSeq = [];
     level++;
-    h2.innerText = `Level ${level}`;
+    h2.innerHTML = `Level ${level}`;
     let randIdx = Math.floor(Math.random() * 4);
     let randColor = btns[randIdx];
     let randBtn = document.querySelector(`.${randColor}`);
@@ -54,7 +54,13 @@ function checkAns(idx){
             setTimeout(levelUp,1000)
         }
     }else{
-        h2.innerHTML = `<marquee behavior="alternate" direction="left" width="350px"> Game over! Your score was <b>${level}</b>.</marquee> </br><marquee behavior="alternate" direction="right" width="260px"> Press any key to start.</marquee>`;
+        h2.innerHTML = `Game over! Your score was <b>${level}</b>.<br> Press any key to start.`;
+        h2.style.color = "red"
+        h2.style.backgroundColor = "blue"
+        setTimeout(()=>{
+            document.querySelector("body").style.color = "black"
+            h2.style.backgroundColor = "#cfbce1"
+        },2000)        
         reset();
     }
 };
