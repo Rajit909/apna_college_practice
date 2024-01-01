@@ -8,6 +8,8 @@ let btns = ["red", "yellow", "green", "purple"];
 let started = false;
 let level = 0;
 
+let highScore = localStorage.getItem("highScore") || 0;
+
 document.addEventListener("keypress", function(){
     if (started == false) {
         started = true;
@@ -15,6 +17,13 @@ document.addEventListener("keypress", function(){
         
     }
 })
+
+function updateHighScore(){
+    if(level> highScore){
+        highScore = level;
+        localStorage.setItem("highScore", highScore);
+    }
+}
 
  function gameFlash(btn){
     
@@ -56,10 +65,12 @@ function checkAns(idx){
             setTimeout(levelUp,1000)
         }
     }else{
-        h2.innerHTML = `Game over! Your score was <b>${level}</b>.<br> Press any key to start.`;
+        h2.innerHTML = `Game over! Your score was <b>${level}</b>.<br> Press any key to start.
+        <br>High was Score: ${highScore}`;
+        updateHighScore();
 
         h2.style.color = "red"
-        h2.style.backgroundColor = "blue"
+        h2.style.backgroundColor = "yellow"
         setTimeout(()=>{
             h2.style.color = "black"
             h2.style.backgroundColor = "#cfbce1"
