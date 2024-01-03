@@ -11,8 +11,8 @@ function savetoDb(data){
 
 savetoDb("hii")
 .then(()=>{
-    console.log(resolve)
+
 })
 .catch(()=>{
-console.log(reject);
+    
 })
