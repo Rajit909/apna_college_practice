@@ -9,6 +9,7 @@ function savetoDb(data){
     });
 };
 
+
 savetoDb("hii")
 .then(()=>{
 
