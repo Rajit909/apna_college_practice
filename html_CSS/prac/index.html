@@ -32,6 +32,12 @@
             border-radius: 5px;
             cursor: pointer;
         }
+        section{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
     </style>
 
 </head>
@@ -40,33 +46,70 @@
       
     </div>
 
-
+    <section class="nav">
+        <div class="logo">
+            Tech Journey
+        </div>
+       <ul type="none">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#">Courses</a></li>
+       </ul>
+    </section>
 
     <div class="main">
 
         
-        <h1>Login form</h1>
+        <h1>form</h1>
         <form action="">
-            <label for="uname">Username or Email:</label>
-            <input required type="email" placeholder="Please enter your email">
+            <label for="name" hi>Name</label>
+            <input type="text" name="" id="" autocomplete="off" autofocus placeholder="Enter name" >
+            <br>
+            <label for="phone">Phone</label>
+            <input type="text" name="" id="" size="20" placeholder="+91" readonly disabled>
+            <br>
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" placeholder="Enter email"><br>
+            <br>
+            <label for="Add">Address</label>
+            <textarea name="" id="" cols="30" rows="5" placeholder="Enter Address"></textarea>
+            <br>
+            <br>
+            <label for="qty"> Quntity</label>
+            <input type="number" name="" id="" min="5" max="50" step="5">
+            <br>
+            <label for="Photo">Photo</label>
+            <input type="file" name="" id="" multiple>
+            <br>
+            <label for="Country-code">Country-code</label>
+            <input type="text" name="" id="" pattern="[A-Za-z]{3}">
             <br><br>
-            <label for="pass">Password: </label>
-            <input required type="password" name="" id="">
+            <label for="img">Photo </label>
+            <input type="image" src="../images (4).jpeg" name="" id="" height="100" width="150">
+
             <br>
-            <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity" min="0" max="100" step="20" value="30">
             
-            <input type="range" name="" id="" min="0" max="20">
+            <label for="list">Courses</label>
 
-            <label for="phone">Enter your phone number:</label>
-  <input type="tel" id="phone" name="phone" required pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+            <input list="Courses" name="Courses">
+                <datalist id="Courses">
+                    <option value="C">
+                    <option value="Ccc">
+                    <option value="Python">
+                    <option value="dca">
+                    <option value="Html">
+                </datalist>
 
-
-            <input type="Submit" value="SignIn">
             <br>
-            Or
-            Login with <a href="www.google.com">Google</a>
+            <input type="submit" value="SignIn">
         </form>
+
+      
+
+
+
     </div>
 </body>
 
