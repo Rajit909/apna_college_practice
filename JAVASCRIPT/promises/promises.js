@@ -12,8 +12,8 @@ function savetoDb(data){
 
 savetoDb("hii")
 .then(()=>{
-
+    console.log("data 1 saved");
 })
 .catch(()=>{
-    
+    console.log("promise rejected");
 })
