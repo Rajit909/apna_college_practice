@@ -1,32 +1,90 @@
-function savetoDb(data){
-    return new Promise((resolve, reject) => {
-        let internetSpeed = Math.floor(Math.random() * 10) +1;
-        if (internetSpeed >4) {
-            resolve("Success: data was saved")
-        }else{
-            reject("Failure: weak connection");
-        }
-    });
-};
+// function savetoDb(data){
+//     return new Promise((resolve, reject) => {
+//         let internetSpeed = Math.floor(Math.random() * 10) +1;
+//         if (internetSpeed >4) {
+//             resolve("Success: data was saved")
+//         }else{
+//             reject("Failure: weak connection");
+//         }
+//     });
+// };
 
+// savetoDb("hii")
+// .then((result)=>{
+//     console.log("data 1 saved");
+//     console.log(result);
+//     return savetoDb("hello")
+// })
+// .then((result)=>{
+//     console.log("data 2 saved" );
+//     console.log(result);
+//     return savetoDb("hello hii")
 
-savetoDb("hii")
-.then((result)=>{
-    console.log("data 1 saved");
-    console.log(result);
-    return savetoDb("hello")
-})
-.then((result)=>{
-    console.log("data 2 saved");
-    console.log(result);
-    return savetoDb("hello hii")
+// })
+// .then((result)=>{
+//     console.log("data 3 saved");
+//     console.log(result);
+// })
+// .catch((error)=>{
+//     console.log("promise rejected");
+//     console.log(error);
+// })
 
-})
+// // async await
+// async function saveData(){
+//     try{
+//         let result1 = await savetoDb("hii");
+//         console.log("data 1 saved");
+//         console.log(result1);
+//         let result2 = await savetoDb("hello");
+//         console.log("data 2 saved");
+//         console.log(result2);
+//         let result3 = await savetoDb("hello hii");
+//         console.log("data 3 saved");
+//         console.log(result3);
+//     }catch(error){
+//         console.log("promise rejected");
+//         console.log(error);
+//     }
+// }
+
+// saveData();
+
+let h1 = document.createElement("h1");
+h1.innerText = "hello world";
+document.body.appendChild(h1);
+
+function changeColor(color, delay) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      h1.style.color = color;
+      resolve("color changed");
+    }, delay);
+  });
+}
+
+changeColor("red", 2000)
 .then((result)=>{
-    console.log("data 3 saved");
     console.log(result);
+    console.log("color changed to red");
+    return changeColor("green", 2000);
 })
-.catch((error)=>{
-    console.log("promise rejected");
+.then((result) => {
+    console.log(result);
+    console.log("color changed to green");
+    return changeColor("blue", 2000);
+})
+.then((result) => {
+    console.log(result);
+    console.log("color changed to pink");
+    return changeColor("pink", 1000);
+})
+.then((result) => {
+    console.log(result);
+    console.log("color chnaged to green");
+    return changeColor("green", 1000)
+})
+.catch((error) => {
     console.log(error);
+    console.log("failed to change");
 })
