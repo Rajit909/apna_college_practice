@@ -11,18 +11,22 @@ function savetoDb(data){
 
 
 savetoDb("hii")
-.then(()=>{
+.then((result)=>{
     console.log("data 1 saved");
+    console.log(result);
     return savetoDb("hello")
 })
-.then(()=>{
+.then((result)=>{
     console.log("data 2 saved");
+    console.log(result);
     return savetoDb("hello hii")
 
 })
-.then(()=>{
+.then((result)=>{
     console.log("data 3 saved");
+    console.log(result);
 })
-.catch(()=>{
+.catch((error)=>{
     console.log("promise rejected");
+    console.log(error);
 })
