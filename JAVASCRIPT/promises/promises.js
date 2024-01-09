@@ -13,6 +13,15 @@ function savetoDb(data){
 savetoDb("hii")
 .then(()=>{
     console.log("data 1 saved");
+    return savetoDb("hello")
+})
+.then(()=>{
+    console.log("data 2 saved");
+    return savetoDb("hello hii")
+
+})
+.then(()=>{
+    console.log("data 3 saved");
 })
 .catch(()=>{
     console.log("promise rejected");
