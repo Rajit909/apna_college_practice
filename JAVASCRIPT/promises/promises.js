@@ -57,34 +57,58 @@ document.body.appendChild(h1);
 function changeColor(color, delay) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
+      let num = Math.floor(Math.random() * 5) + 1;
+      if(num > 3){
+        reject("Promise rejected");
+      }
       h1.style.color = color;
       resolve("color changed");
     }, delay);
   });
 }
 
-changeColor("red", 2000)
-.then((result)=>{
-    console.log(result);
-    console.log("color changed to red");
-    return changeColor("green", 2000);
-})
-.then((result) => {
-    console.log(result);
-    console.log("color changed to green");
-    return changeColor("blue", 2000);
-})
-.then((result) => {
-    console.log(result);
-    console.log("color changed to pink");
-    return changeColor("pink", 1000);
-})
-.then((result) => {
-    console.log(result);
-    console.log("color chnaged to green");
-    return changeColor("green", 1000)
-})
-.catch((error) => {
-    console.log(error);
-    console.log("failed to change");
-})
+// async await
+async function demo(){
+  try{
+    
+    await changeColor("red", 2000);
+    await changeColor("blue", 2000);
+    await changeColor("purple", 2000);
+    await changeColor("yellow", 2000);
+  }catch (err){
+    console.log(err);
+    console.log("error found");
+  }
+
+  let a = "next line"
+  console.log(a);
+}
+
+
+
+// then and catch
+// changeColor("red", 2000)
+// .then((result)=>{
+//     console.log(result);
+//     console.log("color changed to red");
+//     return changeColor("green", 2000);
+// })
+// .then((result) => {
+//     console.log(result);
+//     console.log("color changed to green");
+//     return changeColor("blue", 2000);
+// })
+// .then((result) => {
+//     console.log(result);
+//     console.log("color changed to pink");
+//     return changeColor("pink", 1000);
+// })
+// .then((result) => {
+//     console.log(result);
+//     console.log("color chnaged to green");
+//     return changeColor("green", 1000)
+// })
+// .catch((error) => {
+//     console.log(error);
+//     console.log("failed to change");
+// })
