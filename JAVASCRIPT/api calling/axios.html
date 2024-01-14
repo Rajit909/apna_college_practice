@@ -5,21 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 40px;
+        }
+        .container{
+            background-color: aqua;
+            height: 400px;
+            border-radius:10px;
+        }
+
+    </style>
 </head>
 
 <body>
+    <div class="container">
+    <div class="main">
+
+        <h1>
+            Get Random cat facts!
+        </h1>
+        <div>
+            <button id="btn">Show new fact</button>
+        </div>
+        <p id="fact">
+            Fact will be appear here
+        </p>
+    </div>
+    </div>
+    
+    
+    
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <h1>
-        Get Random cat facts!
-
-    </h1>
-    <button id="btn">Show new fact</button>
-    <p id="fact">
-        Fact will be appear here
-    </p>
-
-
-
     <script>
         let btn = document.getElementById("btn")
         let para = document.getElementById("fact")
@@ -40,12 +61,9 @@
         btn.addEventListener("click", async () => {
             let fact = await getFact()
             console.log(fact);
-            para.innerHTML = `${fact}`
+            para.innerText = `${fact}`
         })
-
-
-
-
+        
     </script>
 </body>
 
