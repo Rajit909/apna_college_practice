@@ -27,43 +27,44 @@
     <div class="main">
 
         <h1>
-            Get Random cat facts!
+            Get Random Jokes!
         </h1>
         <div>
-            <button id="btn">Show new fact</button>
+            <button id="btn">Show new jokes</button>
         </div>
         <p id="fact">
-            Fact will be appear here
+            Jokes will be appear here
         </p>
     </div>
     </div>
-    
-    
-    
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         let btn = document.getElementById("btn")
         let para = document.getElementById("fact")
 
+        let url = "https://icanhazdadjoke.com/"
 
-        let url = "https://catfact.ninja/fact"
-
-        async function getFact() {
-            try {
-                let res = await axios.get(url)
-                return res.data.fact
-            } catch (error) {
-                console.log("Error = ", error);
-                return "No fact found"
+        // geting jokes
+        async function getJokes(){
+            try{
+                const config = {
+                    headers: {Accept: "application/json"}
+                }
+                let res = await axios.get(url, config);
+                return res.data.joke;
+                console.log(res.data.joke);
+            } catch (err){
+                console.log("Error -", err);
             }
         }
-
-        btn.addEventListener("click", async () => {
-            let fact = await getFact()
-            console.log(fact);
-            para.innerText = `${fact}`
+        
+        // clicking button
+        btn.addEventListener("click",async ()=>{
+            let joke = await getJokes();
+            para.innerText = `${joke}`
         })
+
+
     </script>
 </body>
-
 </html>
